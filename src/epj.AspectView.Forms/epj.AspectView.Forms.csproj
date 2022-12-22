@@ -2,7 +2,29 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>0.1.0-alpha</Version>
+    <Authors>ewerspej</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Title>AspectView for Xamarin.Forms</Title>
+    <Description>A simple AspectView control to wrap other content that needs to keep a specific aspect ratio, e.g. video players or canvasses</Description>
+    <RepositoryUrl>https://github.com/ewerspej/epj.AspectView.Forms</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ewerspej/epj.AspectView.Forms</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>aspect;aspectview;ratio;scaling;resizing;resize;resizer;sizer;xamarin;forms;view;contentview;</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.0.0" />
