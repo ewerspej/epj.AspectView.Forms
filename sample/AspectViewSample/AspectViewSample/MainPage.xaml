@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:epj.AspectView.Forms;assembly=epj.AspectView.Forms"
+             xmlns:videoPlayer="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+             x:Class="AspectViewSample.MainPage"
+             x:Name="DemoPage">
+
+  <StackLayout>
+
+    <forms:AspectView
+      HorizontalOptions="Fill"
+      VerticalOptions="CenterAndExpand"
+      AspectRatio="0.5625">
+
+      <videoPlayer:VideoPlayer
+        AutoPlay="True"
+        Source="{Binding VideoSource, Source={x:Reference DemoPage}}" />
+
+    </forms:AspectView>
+
+  </StackLayout>
+
+</ContentPage>
