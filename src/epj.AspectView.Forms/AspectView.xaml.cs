@@ -40,6 +40,7 @@ namespace epj.AspectView.Forms
                 if (!HeightRequest.Equals(newHeight))
                 {
                     HeightRequest = newHeight;
+                    MinimumHeightRequest = newHeight;
                     LogUpdate();
                 }
                 return;
@@ -53,6 +54,7 @@ namespace epj.AspectView.Forms
                 if (!WidthRequest.Equals(newWidth))
                 {
                     WidthRequest = newWidth;
+                    MinimumWidthRequest = newWidth;
                     LogUpdate();
                 }
             }
