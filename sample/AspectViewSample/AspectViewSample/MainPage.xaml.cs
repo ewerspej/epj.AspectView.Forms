@@ -26,5 +26,25 @@ namespace AspectViewSample
 
             return string.Empty;
         }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            
+            if (height > width)
+            {
+                //portrait
+                NavigationPage.SetHasNavigationBar(this, true);
+                VideoAspectView.HorizontalOptions = LayoutOptions.Fill;
+                VideoAspectView.VerticalOptions = LayoutOptions.CenterAndExpand;
+            }
+            else
+            {
+                //landscape
+                NavigationPage.SetHasNavigationBar(this, false);
+                VideoAspectView.HorizontalOptions = LayoutOptions.CenterAndExpand;
+                VideoAspectView.VerticalOptions = LayoutOptions.Fill;
+            }
+        }
     }
 }

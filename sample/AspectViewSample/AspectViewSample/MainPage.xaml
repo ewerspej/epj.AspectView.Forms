@@ -6,23 +6,23 @@
              x:Class="AspectViewSample.MainPage"
              x:Name="DemoPage">
 
-  <StackLayout>
+  <Grid>
 
     <forms:AspectView
-      HorizontalOptions="Fill"
-      VerticalOptions="Start"
+      x:Name="VideoAspectView"
       AspectRatio="0.5625">
 
       <videoPlayer:VideoPlayer
         AutoPlay="True"
+        Repeat="True"
         Source="{Binding VideoSource, Source={x:Reference DemoPage}}" />
 
     </forms:AspectView>
 
-    <BoxView
+    <!--<BoxView
       BackgroundColor="Orange"
-      VerticalOptions="FillAndExpand"/>
+      VerticalOptions="FillAndExpand"/>-->
 
-  </StackLayout>
+  </Grid>
 
 </ContentPage>

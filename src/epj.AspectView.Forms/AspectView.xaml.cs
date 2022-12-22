@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Diagnostics;
+﻿using System.ComponentModel;
+using CommunityToolkit.Diagnostics;
 using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -29,11 +30,22 @@ namespace epj.AspectView.Forms
         {
             base.OnSizeAllocated(width, height);
 
+            WidthRequest = -1;
+            MinimumWidthRequest = -1;
+
+            HeightRequest = -1;
+            MinimumHeightRequest = -1;
+
             if (width < 1.0 || height < 1.0)
             {
                 return;
             }
 
+            UpdateSize();
+        }
+
+        private void UpdateSize()
+        {
             if (HorizontalOptions.Alignment == LayoutAlignment.Fill)
             {
                 var newHeight = Width * AspectRatio;
@@ -41,25 +53,25 @@ namespace epj.AspectView.Forms
                 {
                     HeightRequest = newHeight;
                     MinimumHeightRequest = newHeight;
+                    
                     LogUpdate();
                 }
-                return;
             }
-
-            if (VerticalOptions.Alignment == LayoutAlignment.Fill)
+            else if (VerticalOptions.Alignment == LayoutAlignment.Fill)
             {
                 Guard.IsGreaterThan(AspectRatio, 0.0);
-                var newWidth = HeightRequest / AspectRatio;
+                var newWidth = Height / AspectRatio;
 
                 if (!WidthRequest.Equals(newWidth))
                 {
                     WidthRequest = newWidth;
                     MinimumWidthRequest = newWidth;
+                    
                     LogUpdate();
                 }
             }
         }
-
+        
         private void LogUpdate()
         {
             Debug.WriteLine($"{nameof(AspectView)} updated: {nameof(AspectRatio)}: {AspectRatio}, {nameof(WidthRequest)}: {WidthRequest}, {nameof(HeightRequest)}: {HeightRequest}");
