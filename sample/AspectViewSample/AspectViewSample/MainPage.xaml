@@ -20,7 +20,7 @@
                 </VisualState.StateTriggers>
                 <VisualState.Setters>
                   <Setter Property="HorizontalOptions" Value="Fill" />
-                  <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                  <Setter Property="VerticalOptions" Value="Center" />
                 </VisualState.Setters>
               </VisualState>
               <VisualState x:Name="Landscape">
@@ -28,7 +28,7 @@
                   <OrientationStateTrigger Orientation="Landscape" />
                 </VisualState.StateTriggers>
                 <VisualState.Setters>
-                  <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                  <Setter Property="HorizontalOptions" Value="Center" />
                   <Setter Property="VerticalOptions" Value="Fill" />
                 </VisualState.Setters>
               </VisualState>
