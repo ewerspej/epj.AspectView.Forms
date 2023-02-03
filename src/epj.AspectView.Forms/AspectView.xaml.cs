@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using CommunityToolkit.Diagnostics;
+﻿using CommunityToolkit.Diagnostics;
 using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -53,7 +52,7 @@ namespace epj.AspectView.Forms
                 {
                     HeightRequest = newHeight;
                     MinimumHeightRequest = newHeight;
-                    
+
                     LogUpdate();
                 }
             }
@@ -66,12 +65,12 @@ namespace epj.AspectView.Forms
                 {
                     WidthRequest = newWidth;
                     MinimumWidthRequest = newWidth;
-                    
+
                     LogUpdate();
                 }
             }
         }
-        
+
         private void LogUpdate()
         {
             Debug.WriteLine($"{nameof(AspectView)} updated: {nameof(AspectRatio)}: {AspectRatio}, {nameof(WidthRequest)}: {WidthRequest}, {nameof(HeightRequest)}: {HeightRequest}");

@@ -5,4 +5,4 @@ An AspectView control for Xamarin.Forms that resizes itself based on the provide
 
 ## Acknowledgements
 
-Thanks to Gerald Versluis for the Videos
+Video by <a href="https://pixabay.com/users/meditation_hypnosis-25780195/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=video&amp;utm_content=113403">Ivan</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=video&amp;utm_content=113403">Pixabay</a>

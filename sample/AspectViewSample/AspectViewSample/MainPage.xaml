@@ -1,16 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:forms="clr-namespace:epj.AspectView.Forms;assembly=epj.AspectView.Forms"
-             xmlns:videoPlayer="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
-             x:Class="AspectViewSample.MainPage"
-             x:Name="DemoPage">
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:forms="clr-namespace:epj.AspectView.Forms;assembly=epj.AspectView.Forms"
+  xmlns:videoPlayer="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+  x:Class="AspectViewSample.MainPage"
+  NavigationPage.HasNavigationBar="False"
+  x:Name="DemoPage">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="forms:AspectView" x:Key="AspectStyle">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+          <VisualStateGroupList>
+            <VisualStateGroup>
+              <VisualState x:Name="Portrait">
+                <VisualState.StateTriggers>
+                  <OrientationStateTrigger Orientation="Portrait" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                  <Setter Property="HorizontalOptions" Value="Fill" />
+                  <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                </VisualState.Setters>
+              </VisualState>
+              <VisualState x:Name="Landscape">
+                <VisualState.StateTriggers>
+                  <OrientationStateTrigger Orientation="Landscape" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                  <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                  <Setter Property="VerticalOptions" Value="Fill" />
+                </VisualState.Setters>
+              </VisualState>
+            </VisualStateGroup>
+          </VisualStateGroupList>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
 
   <Grid>
 
     <forms:AspectView
       x:Name="VideoAspectView"
-      AspectRatio="0.5625">
+      AspectRatio="0.5625"
+      Style="{StaticResource AspectStyle}">
 
       <videoPlayer:VideoPlayer
         AutoPlay="True"
@@ -18,10 +52,6 @@
         Source="{Binding VideoSource, Source={x:Reference DemoPage}}" />
 
     </forms:AspectView>
-
-    <!--<BoxView
-      BackgroundColor="Orange"
-      VerticalOptions="FillAndExpand"/>-->
 
   </Grid>
 
