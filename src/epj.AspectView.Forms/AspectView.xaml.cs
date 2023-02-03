@@ -48,26 +48,32 @@ namespace epj.AspectView.Forms
             if (HorizontalOptions.Alignment == LayoutAlignment.Fill)
             {
                 var newHeight = Width * AspectRatio;
-                if (!HeightRequest.Equals(newHeight))
-                {
-                    HeightRequest = newHeight;
-                    MinimumHeightRequest = newHeight;
 
-                    LogUpdate();
+                if (HeightRequest.Equals(newHeight))
+                {
+                    return;
                 }
+
+                HeightRequest = newHeight;
+                MinimumHeightRequest = newHeight;
+
+                LogUpdate();
             }
             else if (VerticalOptions.Alignment == LayoutAlignment.Fill)
             {
                 Guard.IsGreaterThan(AspectRatio, 0.0);
+
                 var newWidth = Height / AspectRatio;
 
-                if (!WidthRequest.Equals(newWidth))
+                if (WidthRequest.Equals(newWidth))
                 {
-                    WidthRequest = newWidth;
-                    MinimumWidthRequest = newWidth;
-
-                    LogUpdate();
+                    return;
                 }
+
+                WidthRequest = newWidth;
+                MinimumWidthRequest = newWidth;
+
+                LogUpdate();
             }
         }
 
