@@ -42,7 +42,6 @@
   <Grid>
 
     <forms:AspectView
-      x:Name="VideoAspectView"
       AspectRatio="0.5625"
       Style="{StaticResource AspectStyle}">
 
