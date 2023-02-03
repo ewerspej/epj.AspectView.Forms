@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/github/license/ewerspej/epj.AspectView.Forms)
 [![Nuget](https://img.shields.io/nuget/v/epj.AspectView.Forms)](https://www.nuget.org/packages/epj.AspectView.Forms/)
 
-An type of *ContentView* for Xamarin.Forms that resizes itself based on the provided aspect ratio.
+A type of *ContentView* for Xamarin.Forms that resizes itself based on the provided aspect ratio.
 
 ## Summary
 
