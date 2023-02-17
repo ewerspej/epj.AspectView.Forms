@@ -3,10 +3,9 @@
   xmlns="http://xamarin.com/schemas/2014/forms"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   xmlns:forms="clr-namespace:epj.AspectView.Forms;assembly=epj.AspectView.Forms"
-  xmlns:videoPlayer="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+  xmlns:views="http://xamarin.com/schemas/2020/toolkit"
   x:Class="AspectViewSample.MainPage"
-  NavigationPage.HasNavigationBar="False"
-  x:Name="DemoPage">
+  NavigationPage.HasNavigationBar="False">
 
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -42,13 +41,14 @@
   <Grid>
 
     <forms:AspectView
+      BackgroundColor="Aqua"
       AspectRatio="0.5625"
       Style="{StaticResource AspectStyle}">
 
-      <videoPlayer:VideoPlayer
+      <views:MediaElement
         AutoPlay="True"
-        Repeat="True"
-        Source="{Binding VideoSource, Source={x:Reference DemoPage}}" />
+        IsLooping="True"
+        Source="https://github.com/ewerspej/epj.AspectView.Forms/blob/main/assets/frog113403.mp4?raw=true"/>
 
     </forms:AspectView>
 
